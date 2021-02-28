@@ -4,17 +4,13 @@ my_list = [
     ['1', '2', '3.6', None, '4+5.7j', '6']
 ]
 
-
 int_list = []
 float_list = []
 str_list = []
 for item in my_list:
     types = [type(elem).__name__ for elem in item]
     single_types = []
-    for i_type in types:
-        if i_type not in single_types:
-            single_types.append(i_type)
-#    single_types = [i_type for i_type in types if i_type not in single_types]
+    single_types = [i_type for i_type in types if i_type not in single_types]
     types_count = [types.count(element_type) for element_type in single_types]
     max_types_count = max(types_count)
     index_max = types_count.index(max(types_count))
